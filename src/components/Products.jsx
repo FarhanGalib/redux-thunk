@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Grid, Card, CardContent, Container } from "@material-ui/core";
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";

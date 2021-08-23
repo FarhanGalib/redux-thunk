@@ -41,10 +41,14 @@ const ProductEdit = () => {
 
     useEffect(() => {
         dispatch(requestCurrentProduct(id));
-        console.log(id);
         setSelectedProduct(currentProduct);
         setOpen(false);
-    }, [dispatch]);
+    }, []);
+
+    useEffect(() => {
+        setSelectedProduct(currentProduct);
+     
+    }, [currentProduct]);
 
     const addProduct = (e, key) => {
         setSelectedProduct({ ...selectedProduct, [key]: e.target.value });
@@ -53,16 +57,6 @@ const ProductEdit = () => {
     const requestUpdateProduct = () => {
         dispatch(requestUpdate(selectedProduct, id));
         history.push(`/product/${id}`);
-        // axios
-        //     .patch(`https://fakestoreapi.com/products/${id}`, {
-        //         title: selectedProduct.title,
-        //         category: selectedProduct.category,
-        //         description: selectedProduct.description,
-        //         price: selectedProduct.price,
-        //         image: selectedProduct.image,
-        //     })
-        //     .then((response) => history.push(`/product/${id}`))
-        //     .catch((error) => console.log(error));
     };
     return (
         <>

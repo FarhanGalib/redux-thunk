@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { Container, Grid, TextField, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
+import { requestAddNewProduct } from '../Redux/actions/addNewProductAction';
+import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles({
     txtField: {
@@ -27,6 +28,8 @@ const useStyles = makeStyles({
 
 const CreateProduct = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const history = useHistory();
     const [newProduct, setNewProduct] = useState({
         title: "",
         category: "",
@@ -34,20 +37,13 @@ const CreateProduct = () => {
         price: "",
         image: "",
     });
-    const history = useHistory();
+   
+
+
     const requestAddProduct = (e) => {
         e.preventDefault();
-        axios
-            .post("https://fakestoreapi.com/products", {
-                title: newProduct.title,
-                category: newProduct.category,
-                description: newProduct.description,
-                price: newProduct.price,
-                image: newProduct.image,
-            })
-            .then((response) => {
-                history.push("/");
-            });
+        dispatch(requestAddNewProduct(newProduct));
+        history.push("/");
     };
 
     const addProduct = (e, key) => {
