@@ -1,0 +1,35 @@
+.navbar{
+    display: flex;
+    height: 40px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-left: 50px; 
+}
+
+.navigation{
+    display: flex;
+    margin-Right: 50px; 
+}
+.home{
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.home:hover{
+    color: red;
+}
+.create_product{
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.create_product:hover{
+    color: red;
+    
+}

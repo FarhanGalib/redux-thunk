@@ -1,0 +1,17 @@
+.product_list{
+    width: 100%;
+    display: column;
+    flex-direction: row;
+}
+.product{
+    box-shadow: 1px 1px 2px gray;
+    width: 100%;
+}
+.product_image_container{
+   height: 100px;
+   width: 100px;
+}
+.product_image{
+    height: 100px;
+    width: 100px;
+}
