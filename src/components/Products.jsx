@@ -11,6 +11,7 @@ import { CardHeader } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { requestProductList } from "../Redux/actions/productListAction";
 import { TextField } from "@material-ui/core";
+import { loadCurrentProduct } from "../Redux/actions/productDetailsAction";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -66,6 +67,7 @@ const Products = () => {
     }, []);
 
     const handleClickOnProduct = (id) => {
+        dispatch(loadCurrentProduct(null));
         history.push(`/product/${id}`);
     };
 
